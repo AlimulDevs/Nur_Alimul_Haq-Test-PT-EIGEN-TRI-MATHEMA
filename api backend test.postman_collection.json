@@ -1,0 +1,621 @@
+{
+	"info": {
+		"_postman_id": "ed426ae7-6f6b-4c38-92e2-b5061b09f1e5",
+		"name": "api backend test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24355410",
+		"_collection_link": "https://remain-entity.postman.co/workspace/Take-It~8815b9d2-0a9a-4e7a-89bd-20f3afd66289/collection/24355410-ed426ae7-6f6b-4c38-92e2-b5061b09f1e5?action=share&source=collection_link&creator=24355410"
+	},
+	"item": [
+		{
+			"name": "book",
+			"item": [
+				{
+					"name": "get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/book",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"book"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/book",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"book"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"is_success\": true,\n    \"message\": \"success get all books\",\n    \"data\": [\n        {\n            \"id\": 3,\n            \"code\": \"TW-11\",\n            \"title\": \"Twilight\",\n            \"author\": \"Stephenie Meyer\",\n            \"stock\": 1\n        },\n        {\n            \"id\": 4,\n            \"code\": \"HOB-83\",\n            \"title\": \"The Hobbit, or There and Back Again\",\n            \"author\": \"J.R.R. Tolkien\",\n            \"stock\": 1\n        },\n        {\n            \"id\": 5,\n            \"code\": \"NRN-7\",\n            \"title\": \"The Lion, the Witch and the Wardrobe\",\n            \"author\": \"C.S. Lewis\",\n            \"stock\": 1\n        },\n        {\n            \"id\": 6,\n            \"code\": \"JK-47\",\n            \"title\": \"Harry Potter\",\n            \"author\": \"J.K Rowling\",\n            \"stock\": 1\n        },\n        {\n            \"id\": 8,\n            \"code\": \"JK-67\",\n            \"title\": \"Harry Potter\",\n            \"author\": \"J.K Rowling\",\n            \"stock\": 1\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "get by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/book/26",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"book",
+								"26"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/book/1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"book",
+										"1"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"is_success\": true,\n    \"message\": \"success get books by id\",\n    \"data\": {\n        \"id\": 4,\n        \"code\": \"HOB-83\",\n        \"title\": \"The Hobbit, or There and Back Again\",\n        \"author\": \"J.R.R. Tolkien\",\n        \"stock\": 1\n    }\n}"
+						},
+						{
+							"name": "failed not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/book/2",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"book",
+										"2"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 404,\n    \"is_success\": false,\n    \"message\": \"book not found\"\n}"
+						}
+					]
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/book/26",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"book",
+								"26"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "failed",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/book/2",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"book",
+										"2"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"is_success\": false,\n    \"message\": \"book not found\"\n}"
+						},
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/book/2",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"book",
+										"2"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"is_success\": true,\n    \"message\": \"success delete book\",\n    \"data\": {\n        \"id\": 4,\n        \"code\": \"HOB-83\",\n        \"title\": \"The Hobbit, or There and Back Again\",\n        \"author\": \"J.R.R. Tolkien\",\n        \"stock\": 1\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\": \"JK-88\",\r\n    \"title\": \"Harry Mugire\",\r\n    \"author\": \"J.K 1\",\r\n    \"stock\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/book",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"book"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "failed",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"code\": \"JK-67\",\r\n    \"title\": \"Harry Potter\",\r\n    \"author\": \"J.K Rowling\",\r\n    \"stock\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/book",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"book"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 400,\n    \"is_success\": false,\n    \"message\": \"code already exist\"\n}"
+						},
+						{
+							"name": "create",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"code\": \"JK-67\",\r\n    \"title\": \"Harry Potter\",\r\n    \"author\": \"J.K Rowling\",\r\n    \"stock\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/book",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"book"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"is_success\": true,\n    \"message\": \"success create new book\",\n    \"data\": {\n        \"id\": 9,\n        \"code\": \"JK-88\",\n        \"title\": \"Harry Mugire\",\n        \"author\": \"J.K 1\",\n        \"stock\": 1\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\": \"TW-11\",\r\n    \"title\": \"Harry Potter\",\r\n    \"author\": \"J.K Rowling\",\r\n    \"stock\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/book/3",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"book",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "failed not found",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"code\": \"JK-48\",\r\n    \"title\": \"Harry Potter\",\r\n    \"author\": \"J.K Rowling\",\r\n    \"stock\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/book/1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"book",
+										"1"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"JK-48\",\n    \"title\": \"Harry Potter\",\n    \"author\": \"J.K Rowling\",\n    \"stock\": 1\n}"
+						},
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"code\": \"TW-11\",\r\n    \"title\": \"Harry Potter\",\r\n    \"author\": \"J.K Rowling\",\r\n    \"stock\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/book/3",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"book",
+										"3"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\r\n    \"status\": 201,\r\n    \"is_success\": true,\r\n    \"message\": \"success update book\",\r\n    \"data\": {\r\n        \"id\": 3,\r\n        \"code\": \"TW-11\",\r\n        \"title\": \"Harry Potter\",\r\n        \"author\": \"J.K Rowling\",\r\n        \"stock\": 1\r\n    }\r\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "member",
+			"item": [
+				{
+					"name": "get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/member",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"member"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/member/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"member",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/member/2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"member",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\": \"M00154\",\r\n            \"name\": \"rendi\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/member",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"member"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\": \"M001544\",\r\n    \"name\": \"jaka\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/member/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"member",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "borrow",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"member_code\" : \"M001544\",\r\n    \"book_code\" :\"TW-11\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/borrow/create",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"borrow",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "return",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"member_code\" : \"M001544\",\r\n    \"book_code\" :\"TW-11\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/borrow/return",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"borrow",
+								"return"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/borrow",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"borrow"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8080/api",
+			"type": "string"
+		}
+	]
+}
